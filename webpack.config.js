@@ -4,6 +4,10 @@ const path = require('path')
 module.exports = {
   mode: 'development', // 去除警告，development: 开发者模式，production: 用户模式
   entry: './src/index.js',
+  devtool: 'inline-source-map',
+  devServer: {
+    contentBase: './dist',
+  },
   output: {
     filename: 'index.[contenthash].js', // 配置缓存
   },
