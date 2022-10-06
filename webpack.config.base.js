@@ -16,6 +16,14 @@ module.exports = {
   module: {
     rules: [
       {
+        test: /\.(png|jpe?g|gif)$/i,
+        use: [
+          {
+            loader: 'file-loader', // 把文件变成文件路径
+          },
+        ],
+      },
+      {
         test: /\.styl$/,
         use: [
           // compiles Stylus to CSS
