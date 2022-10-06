@@ -4,6 +4,7 @@ const path = require('path')
 const base = require('./webpack.config.base')
 
 module.exports = {
+  ...base, // 把 base 所有属性抄过来
   mode: 'production',
   plugins: [
     ...base.plugins, // 把 base.plugins 所有属性抄过来
@@ -15,6 +16,7 @@ module.exports = {
   ],
   module: {
     rules: [
+      ...base.module.rules,
       {
         test: /\.css$/i,
         use: [
